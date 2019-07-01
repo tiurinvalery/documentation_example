@@ -14,19 +14,21 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
+    private String roleCode;
 
     protected Customer() {}
 
-    public Customer(String firstName, String lastName) {
+    public Customer(String firstName, String lastName, String roleCode) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.roleCode = roleCode;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%d, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
+                "Customer[id=%d, firstName='%s', lastName='%s', role_code='%s']",
+                id, firstName, lastName, roleCode);
     }
 
 // end::sample[]
@@ -42,5 +44,13 @@ public class Customer {
 	public String getLastName() {
 		return lastName;
 	}
+
+    public String getRoleCode() {
+        return roleCode;
+    }
+
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
+    }
 }
 
